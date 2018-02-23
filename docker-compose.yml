@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  mosquitto-server:
+    image: offtechnologies/docker-arm32v6-mosquitto:1.4.14-r3
+    container_name: mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - /storage/docker/moquitto:/etc/mosquitto
+    restart: always
+    labels:
+      - traefik.enable=false
