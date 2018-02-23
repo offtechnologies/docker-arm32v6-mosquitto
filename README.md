@@ -27,13 +27,13 @@ docker-compose up -d
 ```
 docker run --rm -it \
   --link mosquitto \
-  offtechnologies/docker-arm32v6-mosquitto -h mosquitto -t '#'
+  offtechnologies/docker-arm32v6-mosquitto mosquitto_sub -h mosquitto -t '#'
 ```
 ### mosquitto_pub
 ```
 docker run --rm -it \
   --link mosquitto \
-  offtechnologies/docker-arm32v6-mosquitto -h mosquitto -t home/switch/1/on -m "Switch is ON"
+  offtechnologies/docker-arm32v6-mosquitto mosquitto_pub -h mosquitto -t home/switch/1/on -m "Switch is ON"
 ```
 ## 1.0.0 - 2018-02-23
 * first release
